@@ -34,8 +34,6 @@ class CDRGenerationServiceTest {
         }
     }
 
-
-
     @Test
     void testGenerate() {
         clearResources();

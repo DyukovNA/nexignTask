@@ -9,7 +9,7 @@ import java.sql.SQLException;
  *  @version 1.0
  *  */
 public class ConnectionUtil {
-    public static final String DB_URL = "jdbc:h2:C:/Users/1cept/IdeaProjects/nexignTask/db/db;DB_CLOSE_DELAY=-1;";
+    public static final String DB_URL = "jdbc:h2:~/nexignTask/db/db;DB_CLOSE_DELAY=-1;";
     public static final String USERNAME = "sa";
     public static final String PASSWORD = "sa";
     public static final String DB_Driver = "org.h2.Driver";
