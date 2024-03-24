@@ -9,6 +9,18 @@ public class Main {
         CDRGenerationService cdrGenerationService = new CDRGenerationService();
         cdrGenerationService.generate();
         UDRGenerationService udrGenerationService = new UDRGenerationService();
-        udrGenerationService.generateReport();
+        try {
+            if (args.length == 0) {
+                udrGenerationService.generateReport();
+            } else if (args.length == 1) {
+                udrGenerationService.generateReport(args[0]);
+            } else if (args.length == 2) {
+                udrGenerationService.generateReport(args[0], Integer.parseInt(args[1]));
+            } else System.out.println("Too many arguments");
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }

@@ -25,6 +25,10 @@ public class CDRGenerationService {
     private static final int MIN_TIME_OF_GENERATION = 1514764800;
     /** Поле с верхней границей начала тарификации, равно Wed Mar 22 2023 00:00:00 GMT+0000 */
     private static final int MAX_TIME_OF_GENERATION = 1679443200;
+    /** Поле с минимальной длительностью возможного звонка в секундах */
+    private static final int MIN_TIME_OF_CALL = 30;
+    /** Поле с максимальной длительностью возможного звонка в секундах */
+    private static final int MAX_TIME_OF_CALL = 3600;
     /** Процедура генерации CDR файла и заполнения таблицы в базе данных.
      * Таблица очищается перед заполнением, чтобы избежать повторения уникальных идентификаторов.
      * @see CDRGenerationService#resetCDRTable()
@@ -196,7 +200,7 @@ public class CDRGenerationService {
 
         Random rand = new Random();
         long startOfCall = rand.nextLong(timeOfBeginning, timeOfEnding);
-        long endOfCall = startOfCall + rand.nextLong(30, 3600);
+        long endOfCall = startOfCall + rand.nextLong(MIN_TIME_OF_CALL, MAX_TIME_OF_CALL);
 
         return type + "," +
                 msisdn + "," +
