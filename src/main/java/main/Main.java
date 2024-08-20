@@ -1,13 +1,17 @@
 package main;
 
 import Services.CDRGenerationService.CDRGenerationService;
+import Services.CDRGenerationService.DBManager;
 import Services.UDRGeneration.UDRGenerationService;
 
 
 public class Main {
     public static void main(String[] args){
         CDRGenerationService cdrGenerationService = new CDRGenerationService();
-        cdrGenerationService.generate();
+        DBManager dbManager = new DBManager();
+        dbManager.resetCDRTable();
+        cdrGenerationService.generateSetOfCDRs();
+        dbManager.createDBofCDRs();
         UDRGenerationService udrGenerationService = new UDRGenerationService();
         try {
             if (args.length == 0) {
@@ -20,7 +24,5 @@ public class Main {
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 }

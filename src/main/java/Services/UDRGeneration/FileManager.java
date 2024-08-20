@@ -13,9 +13,8 @@ class FileManager {
      * @return Путь до CDR-файла
      * */
     public static @NotNull String getPathCDR(@NotNull Integer numOfFile){
-        String filename = String.format("%2d_CDR.txt", numOfFile);
-        return "src" + File.separator + "main" + File.separator
-                + "resources" + File.separator + "CDRs" + File.separator + filename;
+        String filename = String.format("%d_CDR.txt", numOfFile);
+        return "." + File.separator + "CDRs" + File.separator + filename;
     }
     /** Функция получения пути до UDR-файла формата JSON с заданным номер мобильного абонента и номером месяца.
      * @param msisdn номер мобильного абонента
@@ -25,12 +24,10 @@ class FileManager {
     public static @NotNull String getPathUDR(String msisdn, @NotNull Integer month) throws IllegalArgumentException {
         if (month == -1) {
             String filename = String.format("%s.json", msisdn);
-            return "src" + File.separator + "main" + File.separator
-                    + "resources" + File.separator + "reports" + File.separator + filename;
+            return "." + File.separator + "reports" + File.separator + filename;
         } else if (month > 0 && month <= 12) {
             String filename = String.format("%s_%d.json", msisdn, month);
-            return "src" + File.separator + "main" + File.separator
-                    + "resources" + File.separator + "reports" + File.separator + filename;
+            return "." + File.separator + "reports" + File.separator + filename;
         } else throw new IllegalArgumentException("Invalid number of month");
     }
     /** Процедура создания пустого файла. Файл имеет название формата "номер_месяц.json"

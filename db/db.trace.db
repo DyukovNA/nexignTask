@@ -42257,3 +42257,181 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 12 more
+2024-08-20 11:39:41.650977+03:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at org.h2.server.web.WebApp.process(WebApp.java:227)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.WebThread.process(WebThread.java:154)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2024-08-20 11:50:43.718582+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 11:50:43.723919+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 11:50:43.724968+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 11:50:43.726487+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 11:50:43.727245+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 11:50:43.728001+03:00 jdbc[11]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at Services.CDRGenerationService.ConnectionUtil.getConnection(ConnectionUtil.java:19)
+	at Services.CDRGenerationService.CDRGenerationService.getRandomMSISDNs(CDRGenerationService.java:119)
+	at Services.CDRGenerationService.CDRGenerationService.generateCDR(CDRGenerationService.java:83)
+	at Services.CDRGenerationService.CDRGenerationService.generateSetOfCDRs(CDRGenerationService.java:63)
+	at main.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 13 more
+2024-08-20 12:05:33.963175+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT number FROM MSISDN WHERE id= 4; [42102-224]
+2024-08-20 12:07:27.740038+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id=16; [42102-224]
+2024-08-20 12:08:16.718729+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id=23; [42102-224]
+2024-08-20 12:14:02.214637+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id= 2; [42102-224]
+2024-08-20 12:14:35.243556+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id=24; [42102-224]
+2024-08-20 12:16:13.175161+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id= 3; [42102-224]
+2024-08-20 12:16:51.021226+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MSISDN" не найдена
+Table "MSISDN" not found; SQL statement:
+SELECT NUMBER FROM MSISDN WHERE id=17; [42102-224]

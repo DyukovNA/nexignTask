@@ -27,9 +27,8 @@ class FileManager {
      * @return Путь к CDR-файлу с заданным порядковым номмером
      * */
     public static @NotNull String getPath(int numOfFile){
-        String filename = String.format("%2d_CDR.txt", numOfFile);
-        return "src" + File.separator + "main" + File.separator
-                + "resources" + File.separator + "CDRs" + File.separator + filename;
+        String filename = String.format("%d_CDR.txt", numOfFile);
+        return "." + File.separator + "CDRs" + File.separator + filename;
     }
 
 }
